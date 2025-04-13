@@ -1,4 +1,6 @@
-
+<?php
+  include 'koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,6 +134,15 @@
               </p>
             </a>
           </li> 
+          <li class="nav-item">
+            <a href="index.php?halaman=menu" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Menu Hidangan
+              </p>
+            </a>
+          </li> 
+       
 
          
          
@@ -154,7 +165,17 @@
         if (isset($_GET['halaman'])) {
             if ($_GET['halaman'] == 'attandent') {
                 include 'attandent.php';
-            }
+            } elseif ($_GET['halaman'] == 'tambah_data') {
+                include 'tambah_data.php';
+            } elseif ($_GET['halaman'] == 'edit_data') {
+              include 'edit_data.php';
+          } elseif ($_GET['halaman'] == 'hapus_data') {
+            include 'hapus_data.php';
+            } elseif ($_GET['halaman'] == 'menu') {
+              include 'menu.php';
+          } elseif ($_GET['halaman'] == 'tambah_menu') {
+            include 'tambah_menu.php';
+        } 
         } else
         {
             include 'home.php';
